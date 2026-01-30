@@ -1,6 +1,6 @@
 import React from "react";
 
-const EmployeeList = ({ employees }) => {
+const EmployeeList = ({ employees,deletButton }) => {
   console.log(employees);
   return (
     <>
@@ -12,6 +12,7 @@ const EmployeeList = ({ employees }) => {
           employees.map((items) => (
             <li className="list-group-item d-flex justify-content-between align-items-center">
               The Name of the Employee is {items.name} and age is {items.age}
+              <button className="btn bg-danger m-2" onClick={()=>deletButton(items.id)}>Delete</button>
             </li>
           ))
         )}
